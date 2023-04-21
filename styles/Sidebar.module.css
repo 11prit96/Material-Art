@@ -1,0 +1,117 @@
+.sidebarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: linear-gradient(90deg, #f59342 , #a85432);
+  color: #ddd;
+  z-index: 100;
+  border-radius: 3rem 0 0 3rem;
+}
+
+.linksContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  height: 80%;
+  width: 100%;
+  padding-top: 2rem;
+}
+
+.linksContainer .links {
+  color: #321775;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 1.5rem;
+  position: relative;
+  width: 50%;
+  text-align: center;
+}
+
+.links:focus {
+  background-color: #000;
+}
+
+.links::before {
+  content: "";
+  background-color: #321775;
+  width: 60%;
+  height: 0.1em;
+  position: absolute;
+  top: 1rem;
+  left: -10px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.links:hover::before {
+  opacity: 1;
+  left: 0;
+}
+
+.links::after {
+  content: "";
+  background-color: #321775;
+  width: 60%;
+  height: 0.1em;
+  position: absolute;
+  bottom: 1rem;
+  right: -10px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.links:hover::after {
+  opacity: 1;
+  right: 0;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .linksContainer .links {
+    font-size: 0.65rem;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .sidebarContainer {
+    width: 400px;
+  }
+  .linksContainer .links {
+    font-size: 0.75rem;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .sidebarContainer {
+    width: 500px;
+  }
+  .linksContainer .links {
+    font-size: 0.9rem;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .sidebarContainer {
+    width: 600px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .sidebarContainer {
+    display: none;
+  }
+}
